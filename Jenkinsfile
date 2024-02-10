@@ -20,8 +20,8 @@ pipeline {
                                   usernameVariable: 'USERNAME',
                                   passwordVariable: 'PASSWORD']]) {
 
-                    bat '/usr/local/bin/cf login -a https://api.cf.us10-001.hana.ondemand.com/ -u $USERNAME -p $PASSWORD'
-                    bat '/usr/local/bin/cf push'
+                    bat "cf login -a https://api.cf.us10-001.hana.ondemand.com -u $CUSERNAME -p $CPASSWORD -o fe81f8a9trial  -s dev"
+                    bat "cf push"
                 }
             }
 
