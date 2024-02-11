@@ -3,12 +3,12 @@ applications:
   - name: investment
     instances: 2
     memory: 400m
-    path: target/investment-0.0.1-SNAPSHOT.jar
+    path: investment/target/investment-0.0.1-SNAPSHOT.jar
     buildpacks:
       - https://github.com/cloudfoundry/java-buildpack.git#v4.62.0
   - name: loan
     instances: 2
     memory: 400m
-    path: target/loan-0.0.1-SNAPSHOT.jar
+    path: loan/target/loan-0.0.1-SNAPSHOT.jar
     buildpacks:
       - https://github.com/cloudfoundry/java-buildpack.git#v4.62.0
