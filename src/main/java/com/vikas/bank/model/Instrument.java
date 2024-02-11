@@ -8,4 +8,20 @@ public class Instrument {
         this.instrumentId = instrumentId;
         this.id = id;
     }
+
+    public Integer getInstrumentId() {
+        return instrumentId;
+    }
+
+    public void setInstrumentId(Integer instrumentId) {
+        this.instrumentId = instrumentId;
+    }
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
 }
