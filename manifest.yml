@@ -2,13 +2,17 @@
 applications:
   - name: investment
     instances: 1
-    memory: 400m
+    memory: 800m
     path: investment/target/investment-0.0.1-SNAPSHOT.jar
     buildpacks:
       - https://github.com/cloudfoundry/java-buildpack.git#v4.62.0
+    env:
+      JBP_CONFIG_OPEN_JDK_JRE: '{jre:{version:17.0.10_13 }}'
   - name: loan
     instances: 1
-    memory: 400m
+    memory: 800m
     path: loan/target/loan-0.0.1-SNAPSHOT.jar
     buildpacks:
       - https://github.com/cloudfoundry/java-buildpack.git#v4.62.0
+    env:
+      JBP_CONFIG_OPEN_JDK_JRE: '{jre:{version:17.0.10_13 }}'
