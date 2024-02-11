@@ -19,7 +19,7 @@ public class FeedController {
     @GetMapping("/get")
     public List<Instrument> test(){
         Map<Integer, Integer> map = new HashMap<>();
-        List<Instrument> list =  IntStream.range(1,100000).boxed().map(val -> new Instrument(val, val)).collect(Collectors.toList());
+        List<Instrument> list =  IntStream.range(1,100).boxed().map(val -> new Instrument(val, val)).collect(Collectors.toList());
         //System.out.println(ClassLayout.parseInstance(list).toPrintable());
         return list;
     }
