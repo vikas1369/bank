@@ -7,7 +7,7 @@ applications:
     buildpacks:
       - https://github.com/cloudfoundry/java-buildpack.git#v4.62.0
     env:
-      JBP_CONFIG_OPEN_JDK_JRE: '{jre:{version:17.0.10_13 }}'
+      JBP_CONFIG_OPEN_JDK_JRE: '{jre:{version:17.0.10_13}}'
   - name: loan
     instances: 1
     memory: 800m
@@ -15,4 +15,4 @@ applications:
     buildpacks:
       - https://github.com/cloudfoundry/java-buildpack.git#v4.62.0
     env:
-      JBP_CONFIG_OPEN_JDK_JRE: '{jre:{version:17.0.10_13 }}'
+      JBP_CONFIG_OPEN_JDK_JRE: '{jre:{version:17.0.10_13}}'
