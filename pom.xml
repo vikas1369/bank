@@ -11,8 +11,14 @@
 	<groupId>com.vikas</groupId>
 	<artifactId>bank</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
+	<packaging>pom</packaging>
 	<name>bank</name>
 	<description>Multi module bank project</description>
+	<modules>
+		<module>loan</module>
+		<module>investment</module>
+		<module>util</module>
+	</modules>
 	<properties>
 		<java.version>17</java.version>
 		<maven.compiler.source>17</maven.compiler.source>
