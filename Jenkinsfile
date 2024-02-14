@@ -37,8 +37,9 @@ pipeline {
             }
         }
     }
+}
 
-    def deployToCloudFoundry(space){
+ def deployToCloudFoundry(space){
         withCredentials([[$class          : 'UsernamePasswordMultiBinding',
                                           credentialsId   : 'PF_CF_ID',
                                           usernameVariable: 'USERNAME',
@@ -48,4 +49,3 @@ pipeline {
                             bat "cf push"
                         }
     }
-}
