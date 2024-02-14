@@ -20,8 +20,8 @@ pipeline {
                     id : 'deployChoice',
                     message: 'Select Deployment target:',
                     parameters : [
-                        choice(name: 'Deploy to Dev', value='dev'),
-                        choice(name: 'Deploy to Test', value='test'),
+                        choice(name: 'Deploy to Dev', value:'dev'),
+                        choice(name: 'Deploy to Test', value:'test'),
                     ]
                 )
                 //Use the input to determine deployment target
