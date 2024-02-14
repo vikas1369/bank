@@ -1,6 +1,13 @@
 pipeline {
 
     agent any
+    parameters{
+         (
+            name : 'env',
+            description: 'Select Deployment target:',
+            choices: ['dev','test']
+        )
+    }
 
     stages {
 
@@ -15,23 +22,8 @@ pipeline {
         stage ('Deploy') {
             steps {
                 script{
-                //Prompt the user for input
-                def userInput = input(
-                    id : 'deployChoice',
-                    message: 'Select Deployment target:',
-                    parameters : [
-                        choice(name: 'Deploy to Dev', value:'dev'),
-                        choice(name: 'Deploy to Test', value:'test'),
-                    ]
-                )
                 //Use the input to determine deployment target
-                if(userInput=='dev'){
-                    deployToCloudFoundry('dev')
-                }else if(userInput=='test'){
-                    deployToCloudFoundry('test')
-                }else{
-                    error('Invalid choice selected')
-                }
+                deployToCloudFoundry(${params.env})
 
                 }
             }
