@@ -2,11 +2,7 @@ pipeline {
 
     agent any
     parameters{
-         choice(
-            name : 'env',
-            description: 'Select Deployment target:',
-            choices: ['dev','test']
-        )
+         choice(name : 'env',description: 'Select Deployment target:',choices: ['dev','test'])
     }
 
     stages {
@@ -23,21 +19,17 @@ pipeline {
             steps {
                 script{
                 //Use the input to determine deployment target
-                deployToCloudFoundry(${params.env})
+                withCredentials([[$class          : 'UsernamePasswordMultiBinding',
+                                                          credentialsId   : 'PF_CF_ID',
+                                                          usernameVariable: 'USERNAME',
+                                                          passwordVariable: 'PASSWORD']]) {
+
+                                            bat "cf login -a https://api.cf.us10-001.hana.ondemand.com -u $USERNAME -p $PASSWORD -o fe81f8a9trial  -s ${params.env}"
+                                            bat "cf push"
+                                        }
 
                 }
             }
         }
     }
 }
-
- def deployToCloudFoundry(space){
-        withCredentials([[$class          : 'UsernamePasswordMultiBinding',
-                                          credentialsId   : 'PF_CF_ID',
-                                          usernameVariable: 'USERNAME',
-                                          passwordVariable: 'PASSWORD']]) {
-
-                            bat "cf login -a https://api.cf.us10-001.hana.ondemand.com -u $USERNAME -p $PASSWORD -o fe81f8a9trial  -s $space"
-                            bat "cf push"
-                        }
-    }
