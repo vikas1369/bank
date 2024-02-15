@@ -19,4 +19,4 @@ applications:
     env:
       JBP_CONFIG_OPEN_JDK_JRE: "{jre: {version: '17.0.8_7'}}"
     routes:
-      - route: bank.cfapps.us10-001.hana.ondemand.com
+      - route: loan.cfapps.us10-001.hana.ondemand.com
