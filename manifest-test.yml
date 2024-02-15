@@ -8,6 +8,8 @@ applications:
       - https://github.com/cloudfoundry/java-buildpack.git#v4.62.0
     env:
       JBP_CONFIG_OPEN_JDK_JRE: "{jre: {version: '17.0.8_7'}}"
+    routes:
+      - route : investment.cert.cfapps.us10-001.hana.ondemand.com
   - name: loan
     instances: 1
     memory: 800m
@@ -16,3 +18,5 @@ applications:
       - https://github.com/cloudfoundry/java-buildpack.git#v4.62.0
     env:
       JBP_CONFIG_OPEN_JDK_JRE: "{jre: {version: '17.0.8_7'}}"
+    routes:
+      - route: loan.cert.cfapps.us10-001.hana.ondemand.com
