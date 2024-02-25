@@ -27,6 +27,13 @@ pipeline {
           }
         }
 
+        //Jenkins has a default quality gate but from project setting we can specify a quality gate to be used
+        stage("Quality gate") {
+            steps {
+                waitForQualityGate abortPipeline: true
+            }
+        }
+
         stage ('Deploy') {
             steps {
                 script{
