@@ -26,6 +26,10 @@
 		<java.version>17</java.version><!-- used in spring boot maven plugin-->
 		<maven.compiler.source>17</maven.compiler.source>
 		<maven.compiler.target>17</maven.compiler.target>
+		<properties>
+			<sonar.host.url>http://localhost:9000</sonar.host.url>
+			<sonar.login>Squ_c2bdd3e6f88aa32151010fdaabdab68ed3f3aa24</sonar.login>
+		</properties>
 	</properties>
 	<dependencies>
 		<dependency>
