@@ -19,8 +19,10 @@ pipeline {
         //Added new stage to scan the repo
         stage('Scan') {
           steps {
-            withSonarQubeEnv(installationName: 'sqserver') {//This is the name that is configured on jenkins system configuration
-              bat './mvnw clean org.sonarsource.scanner.maven:sonar-maven-plugin:3.9.0.2155:sonar'
+            withSonarQubeEnv(installationName: 'sqserver'){
+                 withMaven(maven: 'maven_3_9_6'){//This is the name that is configured on jenkins system configuration
+                  bat 'mvn sonar:sonar'
+                }
             }
           }
         }
