@@ -9,15 +9,15 @@ import java.time.Instant;
 import java.util.UUID;
 
 
-@Table("profile")
-public class ProfileEntity {
+@Table("loan")
+public class LoanEntity {
     @PrimaryKeyColumn(
-            name = "profile_id", ordinal = 0, type = PrimaryKeyType.PARTITIONED)
+            name = "id", ordinal = 0, type = PrimaryKeyType.PARTITIONED)
     private String id;
 
     @PrimaryKeyColumn(
-            name = "lob", ordinal = 1, type = PrimaryKeyType.PARTITIONED)
-    private String lob;
+            name = "line", ordinal = 1, type = PrimaryKeyType.PARTITIONED)
+    private String line;
     @PrimaryKeyColumn(
             name = "type", ordinal = 2, type = PrimaryKeyType.PARTITIONED)
     private String type;
@@ -39,12 +39,12 @@ public class ProfileEntity {
         this.id = id;
     }
 
-    public String getLob() {
-        return lob;
+    public String getLine() {
+        return line;
     }
 
-    public void setLob(String lob) {
-        this.lob = lob;
+    public void setLine(String line) {
+        this.line = line;
     }
 
     public String getType() {

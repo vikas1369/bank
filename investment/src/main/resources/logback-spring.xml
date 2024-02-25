@@ -16,7 +16,7 @@
                     <!-- Custom field "appName" to be included in every log entry -->
                     <pattern>
                         {
-                        "appName" : "loan",
+                        "appName" : "investment",
                         "timestamp": "@timestamp",
                         "severity": "%level",
                         "trace": "%X{traceId:-}",
@@ -42,9 +42,7 @@
     <!-- Console Appender -->
     <appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
         <encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
-            <!--<pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</pattern>-->
-            <!-- with below pattern we can see the logs with trace id and span id-->
-            <pattern> %d{dd-MM-yyyy HH:mm:ss.SSS} %magenta([%thread]) %green([T:%X{traceId:-},S:%X{spanId:-}]) %highlight(%-5level) %logger{36} - %msg%n</pattern>
+            <pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</pattern>
         </encoder>
     </appender>
 

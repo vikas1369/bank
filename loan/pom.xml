@@ -20,17 +20,20 @@
     <dependencies>
 
         <!-- This is used to use perform CRUD operations using cassandra repository-->
+
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-data-cassandra</artifactId>
         </dependency>
 
         <!-- Cassandra drive is needed to programmatically use cassandra -->
+
         <dependency>
             <groupId>com.datastax.cassandra</groupId>
             <artifactId>cassandra-driver-core</artifactId>
             <version>3.0.0</version>
         </dependency>
+
 
         <!-- This was required while creating cassandra connection directly and getting row of the data-->
         <!-- https://mvnrepository.com/artifact/com.codahale.metrics/metrics-core -->
@@ -38,17 +41,6 @@
             <groupId>com.codahale.metrics</groupId>
             <artifactId>metrics-core</artifactId>
             <version>3.0.0</version>
-        </dependency>
-
-        <!-- Logback  -->
-        <dependency>
-            <groupId>ch.qos.logback</groupId>
-            <artifactId>logback-classic</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>net.logstash.logback</groupId>
-            <artifactId>logstash-logback-encoder</artifactId>
-            <version>6.6</version> <!-- logstash dependency -->
         </dependency>
 
 
